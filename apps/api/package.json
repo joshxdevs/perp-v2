@@ -13,6 +13,7 @@
   "type": "commonjs",
   "dependencies": {
     "@repo/db": "*",
+    "@repo/redis": "*",
     "bcrypt": "^6.0.0",
     "cors": "latest",
     "dotenv": "^17.4.2",

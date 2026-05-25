@@ -4,6 +4,7 @@ import cors from "cors"
 import rateLimit from "express-rate-limit"
 import authRoutes from "./routes/auth";
 import userRoutes from "./routes/user"
+import orderRoutes from "./routes/order"
 
 
 const app = express()
@@ -29,6 +30,7 @@ const authLimiter = rateLimit({
 
 app.use("/auth", authLimiter, authRoutes)
 app.use("/user", userRoutes)
+app.use("/order", orderRoutes)
 
 app.get("/health", (_, res) => {
     res.json({

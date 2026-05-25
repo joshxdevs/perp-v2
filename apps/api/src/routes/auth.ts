@@ -6,7 +6,7 @@ import jwt from "jsonwebtoken"
 
 const router = Router();
 
-const SignupSChema = z.object({
+const SignupSchema = z.object({
     username: z.string().min(3, "Username must be at least 3 characters").max(50),
     password: z.string().min(6, "Password must be at least 6 characters ")
 })
@@ -17,7 +17,7 @@ const SigninSchema = z.object({
 })
 
 router.post("/signup", async (req: Request, res: Response) => {
-    const result = SignupSChema.safeParse(req.body)
+    const result = SignupSchema.safeParse(req.body)
     if (!result.success) {
         return res.status(400).json({
             message: result.error.issues[0]?.message
