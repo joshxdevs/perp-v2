@@ -1,0 +1,24 @@
+{
+  "name": "engine",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@repo/redis": "*",
+    "dotenv": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^25.9.1",
+    "nodemon": "latest",
+    "ts-node": "latest",
+    "typescript": "latest"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon -r dotenv/config src/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}

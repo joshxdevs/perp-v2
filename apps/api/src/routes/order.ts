@@ -112,7 +112,7 @@ router.delete("/:orderId", async (req: AuthRequest, res: Response) => {
         })
     }
     const { orderId } = result.data
-    const userId = req.userId
+    const userId = req.userId!
 
     try {
         const order = await prisma.order.findUnique({
