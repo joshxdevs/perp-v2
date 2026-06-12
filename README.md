@@ -4,7 +4,7 @@ A decoupled, fault-tolerant perpetual futures exchange backend built with Node.j
 
 This project implements a high-throughput trading architecture where the HTTP API, the matching engine, and database persistence are completely decoupled to ensure maximum performance, independent scalability, and crash-safety.
 
-## 🏗 Architecture
+## Architecture
 
 The system is designed as a monorepo consisting of three independent microservices and two shared packages:
 
@@ -29,7 +29,7 @@ graph TD
 - **`packages/db`**: Contains the Prisma schema, migrations, and the generated Prisma Client.
 - **`packages/redis`**: Contains the Upstash Redis client and strict TypeScript definitions for all stream messages.
 
-## ✨ Core Features
+## Core Features
 
 - **Decoupled Engine**: The matching engine performs zero blocking network I/O (no database queries) during the matching loop, enabling ultra-low latency order matching.
 - **O(1) Orderbook**: Custom in-memory orderbook utilizing Hash Maps (`Map<number, Order[]>`) for O(1) price level lookups and Binary Search arrays for O(log N) price level insertions.
@@ -38,7 +38,7 @@ graph TD
 - **Idempotency**: Schema-level `@@unique` constraints ensure that redelivered stream messages (e.g., after a worker crash) do not result in duplicate positions.
 - **Monorepo Structure**: Built with NPM Workspaces for seamless code sharing and dependency management.
 
-## 💻 Tech Stack
+## Tech Stack
 
 - **Language**: TypeScript
 - **Framework**: Express.js
@@ -48,7 +48,7 @@ graph TD
 - **Validation**: Zod
 - **Auth**: JWT & bcrypt
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js (v18+)
@@ -118,6 +118,6 @@ npm run dev
 - `POST /order` - Place a limit or market order.
 - `DELETE /order/:orderId` - Cancel a pending order.
 
-## 🧠 What's Next?
+## What's Next?
 - **Phase 6**: Funding Rates and Liquidation Engine implementation.
 - **Phase 7**: WebSocket server for real-time orderbook and trade stream updates to the frontend.
