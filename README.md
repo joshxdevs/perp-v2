@@ -121,3 +121,7 @@ npm run dev
 ## What's Next?
 - **Phase 6**: Funding Rates and Liquidation Engine implementation.
 - **Phase 7**: WebSocket server for real-time orderbook and trade stream updates to the frontend.
+
+## License
+
+This project is licensed under the MIT License
